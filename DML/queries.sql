@@ -8,9 +8,12 @@ values
 ('Target', 'Me', 90, 10),
 ('Another', 'Someone', 900, 100);
 insert into utensil
-()
+(utensilName, dimention, unit)
 values
-(),
+('Bimbi', 1, 'a'),
+('Colher', 2, 'b'),
+('Chávena', 3, 'c'),
+('Batedeira', 4, 'd');
 insert into ingredient
 (ingredientName, description)
 values
@@ -38,9 +41,12 @@ values
 (4, 'Another', 4, 4),
 (5, 'Another', 5, 5);
 insert into usesUtensil
-()
+(id, stepID, utensilName)
 values
-(),
+(1, 1, 'Bimbi'),
+(2, 2, 'Colher'),
+(3, 3, 'Chávena'),
+(4, 4, 'Batedeira');
 insert into usesIngredient
 (id, stepID, ingredientName, quantity, unit)
 values
@@ -55,14 +61,6 @@ values
 
 -- List ingredients
 
-select * from ingredient;
-select * from usesIngredient;
-
-select * from (
-		ingredient join usesIngredient
-		on ingredient.ingredientName = usesIngredient.ingredientName
-	);
-
 select distinct ingredient.ingredientName
 from
 	(
@@ -72,4 +70,15 @@ from
 		has join step
 		on has.stepID = step.stepID
 	) on usesIngredient.stepID = step.stepID
+where has.recipieName = 'Target';
+
+-- List utensils
+
+select distinct usesUtensil.utensilName
+from
+	usesUtensil
+	join (
+		has join step
+		on has.stepID = step.stepID
+	) on usesUtensil.stepID = step.stepID
 where has.recipieName = 'Target';
