@@ -5,6 +5,7 @@ use dbname;
 insert into recipie
 (recipieName, author, calories, preparingTime)
 values
+('Padding', 'Someone', 40, 1000),
 ('Target', 'Me', 90, 10),
 ('Another', 'Someone', 900, 100);
 insert into utensil
@@ -21,9 +22,10 @@ values
 ('Carne', 'muito específico'),
 ('Leite', 'I forgor 💀');
 insert into category
-()
+(categoryName, description),
 values
-(),
+('Dieta', 'Removes fat in 30 days, doctors shocked'),
+('Another', 'Does not remove fat, doctors unresponsive');
 insert into step
 (stepID, description, image)
 values
@@ -55,9 +57,11 @@ values
 (3, 3, 'Tomate', 6, 'L'),
 (4, 4, 'Carne', 100, 'nC');
 insert into belongs
-()
+(recipieName, categoryName)
 values
-();
+('Target', 'Dieta');
+('Another', 'Another');
+('Padding', 'Another');
 
 -- List ingredients
 
@@ -82,3 +86,15 @@ from
 		on has.stepID = step.stepID
 	) on usesUtensil.stepID = step.stepID
 where has.recipieName = 'Target';
+
+-- List recipies by category
+
+select belongs.recipieName
+from belongs 
+where belongs.categoryName = 'Dieta';
+
+-- List recipies by author 
+
+select *
+from recipie
+where recipie.author = 'Me';
