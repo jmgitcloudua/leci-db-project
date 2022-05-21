@@ -109,5 +109,159 @@ namespace BD2122
                 Console.WriteLine(reader.GetString(0));
             }
         }
+
+        public void insertRecipie(string recipieName, string author, int calories, int preparingTime)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText =
+                @"  insert into recipie
+                    (recipieName, author, calories, preparingTime)
+                    values
+                    (@recipieName, @author, @calories, @preparingTime);";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@recipieName", recipieName);
+            cmd.Parameters.AddWithValue("@author", author);
+            cmd.Parameters.AddWithValue("@calories", calories);
+            cmd.Parameters.AddWithValue("@preparingTime", preparingTime);
+            cmd.Connection = con;
+
+            cmd.ExecuteNonQuery();
+        }
+
+        public void insertUtensil(string utensilName, string dimention, int unit)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText =
+                @"  insert into utensil
+                    (utensilName, dimention, unit)
+                    values
+                    (@utensilName, @dimention, @unit);";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@utensilName", utensilName);
+            cmd.Parameters.AddWithValue("@dimention", dimention);
+            cmd.Parameters.AddWithValue("@unit", unit);
+            cmd.Connection = con;
+
+            cmd.ExecuteNonQuery();
+        }
+
+        public void insertIngredient(string ingredientName, string description)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText =
+                @"  insert into ingredient
+                    (ingredientName, description)
+                    values
+                    (@ingredientName, @description);";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@ingredientName", ingredientName);
+            cmd.Parameters.AddWithValue("@description", description);
+            cmd.Connection = con;
+
+            cmd.ExecuteNonQuery();
+        }
+
+        public void insertCategory(string categoryName, string description)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText =
+                @"  insert into category
+                    (categoryName, description)
+                    values
+                    (@categoryName, @description);";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@categoryName", categoryName);
+            cmd.Parameters.AddWithValue("@description", description);
+            cmd.Connection = con;
+
+            cmd.ExecuteNonQuery();
+        }
+
+        public void insertStep(int stepID, string description, string image)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText =
+                @"  insert into step
+                    (stepID, description, image)
+                    values
+                    (@stepID, @description, @image);";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@stepID", stepID);
+            cmd.Parameters.AddWithValue("@description", description);
+            cmd.Parameters.AddWithValue("@image", image);
+            cmd.Connection = con;
+
+            cmd.ExecuteNonQuery();
+        }
+
+        public void addStepToRecipie(string recipieName, int stepID, int id, int stepNum)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText =
+                @"  insert into has
+                    (recipieName, stepID, id, stepNum)
+                    values
+                    (@recipieName, @stepID, @id, @stepNum);";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@recipieName", recipieName);
+            cmd.Parameters.AddWithValue("@stepID", stepID);
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@stepNum", stepNum);
+            cmd.Connection = con;
+
+            cmd.ExecuteNonQuery();
+        }
+
+        public void addUtensilToStep(string utensilName, int stepID, int id)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText =
+                @"  insert into usesUtensil
+                    (utensilName, stepID, id)
+                    values
+                    (@utensilName, @stepID, @id);";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@utensilName", utensilName);
+            cmd.Parameters.AddWithValue("@stepID", stepID);
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Connection = con;
+
+            cmd.ExecuteNonQuery();
+        }
+
+        public void addIngredientToStep(string ingredientName, int stepID, int id, int quantity, string unit)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText =
+                @"  insert into usesIngredient
+                    (ingredientName, stepID, id, quantity, unit)
+                    values
+                    (@ingredientName, @stepID, @id, @quantity, @unit);";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@ingredientName", ingredientName);
+            cmd.Parameters.AddWithValue("@stepID", stepID);
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@quantity", quantity);
+            cmd.Parameters.AddWithValue("@unit", unit);
+            cmd.Connection = con;
+
+            cmd.ExecuteNonQuery();
+        }
+
+        public void addCategoryToStep(string recipieName, int categoryName)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText =
+                @"  insert into belongs
+                    (recipieName, categoryName)
+                    values
+                    (@recipieName, categoryName);";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@recipieName", recipieName);
+            cmd.Parameters.AddWithValue("@categoryName", categoryName);
+            cmd.Connection = con;
+
+            cmd.ExecuteNonQuery();
+        }
     }
 }
