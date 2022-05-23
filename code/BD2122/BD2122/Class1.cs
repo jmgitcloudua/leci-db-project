@@ -51,6 +51,40 @@ namespace BD2122
             }
         }
 
+        public void listIngredientAmounts(string recipie, string ingredient)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText =
+                @"  select usesIngredient.quantity, usesIngredient.unit
+                    from
+                    usesIngredient 
+                    join (
+                        has join step
+                        on has.stepID = step.stepID
+                    ) on usesIngredient.stepID = step.stepID
+                    where has.recipieName = @recipie
+                        and usesIngredient.ingredientName = @ingredient; ";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@recipie", recipie);
+            cmd.Parameters.AddWithValue("@ingredient", ingredient);
+            cmd.Connection = con;
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (!reader.Read())
+                return;
+
+            float quantity = reader.GetFloat(0);
+            string unit = reader.GetString(1);
+            
+            while (reader.Read())
+            {
+                quantity += convertUnit(reader.GetString(1), unit, reader.GetFloat(0));
+            }
+
+            Console.WriteLine(quantity + unit);
+        }
+
         public void listUtensils(string recipie)
         {
             SqlCommand cmd = new SqlCommand();
@@ -326,6 +360,22 @@ namespace BD2122
                             return 32 + ((value + 273.15f) * (9 / 5));
                         default:
                             return -500;
+                    }
+                case "cal":
+                    switch (to)
+                    {
+                        case "J": // cal -> J
+                            return value / 4.1868f;
+                        default:
+                            return -1;
+                    }
+                case "J":
+                    switch (to)
+                    {
+                        case "cal": // J -> cal
+                            return value * 4.1868f;
+                        default:
+                            return -1;
                     }
                 default:
                     return -1;
