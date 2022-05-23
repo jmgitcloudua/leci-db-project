@@ -51,3 +51,29 @@ create table belongs (
 	categoryName name references category on delete cascade on update cascade,
 	primary key(recipieName, categoryName)
 );
+
+go
+CREATE PROCEDURE ConvertUnits (
+	@Value int,
+	@FromUnit name, 
+	@ToUnit name, 
+	@Converted int
+) AS
+	res =
+	case @FromUnit
+		when 'F' then
+			case @ToUnit
+				when 'C' then
+					(@Value - 32) * 5/9
+				else -300
+			end
+		when 'C'
+			case @ToUnit
+				when 'F' then
+					9/5 * @Value + 32
+				else -300
+			end
+		else -1
+	end
+	return res
+go

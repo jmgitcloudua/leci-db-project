@@ -263,5 +263,73 @@ namespace BD2122
 
             cmd.ExecuteNonQuery();
         }
+
+        public float convertUnit(string from, string to, float value)
+        {
+            switch (from) {
+                case "g":
+                    switch (to)
+                    {
+                        case "kg": // g -> kg
+                            return 1000 * value;
+                        case "oz": // g -> oz
+                            return value / 28.34952f;
+                        default:
+                            return -1;
+                    }
+                case "kg":
+                    switch (to)
+                    {
+                        case "g": // kg -> g
+                            return value/ 1000;
+                        case "oz": // kg -> oz
+                            return value / (1000 * 28.34952f);
+                        default:
+                            return -1;
+                    }
+                case "oz":
+                    switch (to)
+                    {
+                        case "g": // oz -> g
+                            return 28.34952f * value;
+                        case "kg": // oz -> kg
+                            return 1000 * 28.34952f * value;
+                        default:
+                            return -1;
+                    }
+                case "C":
+                    switch (to)
+                    {
+                        case "F": // C -> F
+                            return 32 + (value * (9 / 5));
+                        case "K": // C -> K
+                            return value - 273.15f;
+                        default:
+                            return -500; // 0K = -457.87F
+                    }
+                case "F":
+                    switch (to)
+                    {
+                        case "C": // F -> C
+                            return (value - 32) * (5 / 9);
+                        case "K": // F -> K
+                            return (value - 32) * (5 / 9) - 273.15f;
+                        default:
+                            return -500; // 0K = -273.15C
+                    }
+                case "K":
+                    switch (to)
+                    {
+                        case "C": // K -> C
+                            return value + 273.15f;
+                        case "F": // K -> F
+                            return 32 + ((value + 273.15f) * (9 / 5));
+                        default:
+                            return -500;
+                    }
+                default:
+                    return -1;
+            }
+        }
     }
 }
