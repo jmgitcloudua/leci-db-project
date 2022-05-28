@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jmuac\\source\\repos\\leci-db-project\\code\\BD2122\\BD2122\\BD2122.csproj": {}
+    "Z:\\BD\\projeto\\code\\BD2122\\BD2122\\BD2122.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jmuac\\source\\repos\\leci-db-project\\code\\BD2122\\BD2122\\BD2122.csproj": {
+    "Z:\\BD\\projeto\\code\\BD2122\\BD2122\\BD2122.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jmuac\\source\\repos\\leci-db-project\\code\\BD2122\\BD2122\\BD2122.csproj",
+        "projectUniqueName": "Z:\\BD\\projeto\\code\\BD2122\\BD2122\\BD2122.csproj",
         "projectName": "BD2122",
-        "projectPath": "C:\\Users\\jmuac\\source\\repos\\leci-db-project\\code\\BD2122\\BD2122\\BD2122.csproj",
-        "packagesPath": "C:\\Users\\jmuac\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jmuac\\source\\repos\\leci-db-project\\code\\BD2122\\BD2122\\obj\\",
+        "projectPath": "Z:\\BD\\projeto\\code\\BD2122\\BD2122\\BD2122.csproj",
+        "packagesPath": "C:\\Users\\me\\.nuget\\packages\\",
+        "outputPath": "Z:\\BD\\projeto\\code\\BD2122\\BD2122\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\jmuac\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\me\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -43,6 +39,12 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -53,7 +55,15 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

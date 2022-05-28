@@ -10,8 +10,23 @@ namespace BD2122
         {
             return new SqlConnection("data source= localhost;integrated security=true;initial catalog=Northwind");
         }
+        
+		public Recipie? getRecipie(string name)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "select * from recipie where recipie.name = @name";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@name", name);
+            cmd.Connection = con;
 
-        public void listRecipiesByAuthor(string author)
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+                return new Recipie(reader.GetString(0), reader.GetString(1), reader.GetInt32(2), reader.GetInt32(3));
+            else
+                return null;
+        }
+
+        public List<Recipie> listRecipiesByAuthor(string author)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "select * from recipie where recipie.author = @author";
@@ -19,14 +34,18 @@ namespace BD2122
             cmd.Parameters.AddWithValue("@author", author);
             cmd.Connection = con;
 
+            List<Recipie> list = new List<Recipie>();
+
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                Console.WriteLine(reader.GetString(0) + " " + reader.GetString(1) + " " + reader.GetString(2) + " " + reader.GetString(3));
+                list.Add(new Recipie(reader.GetString(0), reader.GetString(1), reader.GetInt32(2), reader.GetInt32(3)));
             }
-        }
 
-        public void listIngredients(string recipie)
+            return list;
+        }
+        
+        public List<string> listIngredients(string recipie)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = 
@@ -44,10 +63,12 @@ namespace BD2122
             cmd.Parameters.AddWithValue("@recipie", recipie);
             cmd.Connection = con;
 
+            List<string> ingredients = new List<string>();
+
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                Console.WriteLine(reader.GetString(0));
+                ingredients.Add(reader.GetString(0));
             }
         }
 
@@ -76,7 +97,7 @@ namespace BD2122
 
             float quantity = reader.GetFloat(0);
             string unit = reader.GetString(1);
-            
+
             while (reader.Read())
             {
                 quantity += convertUnit(reader.GetString(1), unit, reader.GetFloat(0));
@@ -85,7 +106,7 @@ namespace BD2122
             Console.WriteLine(quantity + unit);
         }
 
-        public void listUtensils(string recipie)
+        public List<string> listUtensils(string recipie)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText =
@@ -101,14 +122,18 @@ namespace BD2122
             cmd.Parameters.AddWithValue("@recipie", recipie);
             cmd.Connection = con;
 
+            List<string> list = new List<string>();
+
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                Console.WriteLine(reader.GetString(0));
+                list.Add(reader.GetString(0));
             }
+
+            return list;
         }
 
-        public void findByCategory(string category)
+        public List<string> findByCategory(string category)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText =
@@ -119,11 +144,15 @@ namespace BD2122
             cmd.Parameters.AddWithValue("@category", category);
             cmd.Connection = con;
 
+            List<string> list = new List<string>();
+
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                Console.WriteLine(reader.GetString(0));
+                list.Add(reader.GetString(0));
             }
+
+            return list;
         }
 
         public void findByAuthor(string author)
