@@ -8,11 +8,11 @@ namespace BD2122
 {
     internal class Recipie
     {
-        string name; 
-        string author; 
-        int calories; 
-        int preparingTime;
-        
+        public string name { get; } 
+        public string author { get; }
+        public int calories { get; }
+        public int preparingTime { get; }
+
         internal Recipie(string name, string author, int calories, int preparingTime)
         {
             this.name = name;
