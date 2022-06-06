@@ -344,7 +344,7 @@ namespace BD2122
                         case "kg": // g -> kg
                             return 1000 * value;
                         case "oz": // g -> oz
-                            return value / 28.34952f;
+                            return value /  f;
                         default:
                             return -1;
                     }
