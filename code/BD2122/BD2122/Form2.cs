@@ -36,6 +36,14 @@ namespace BD2122
             {
                 richTextBox1.Text += step + '\n';
             }
+
+            
+            List<Ingredient> ingredients = dbManager.listIngredientAmounts(r.name, "g", "L", "C");
+            foreach (Ingredient ingredient in ingredients)
+            {
+                richTextBox2.Text += ingredient.name + ' ' + ingredient.quantity + ingredient.unit + '\n';
+            }
+            
         }
     }
 }

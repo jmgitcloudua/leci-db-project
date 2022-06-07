@@ -38,6 +38,7 @@
             this.caloriesTxt = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // recipieNameTxt
@@ -116,18 +117,28 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 128);
+            this.richTextBox1.Location = new System.Drawing.Point(12, 204);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(758, 310);
-            this.richTextBox1.TabIndex = 9;
+            this.richTextBox1.Size = new System.Drawing.Size(758, 234);
+            this.richTextBox1.TabIndex = 10;
             this.richTextBox1.Text = "";
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Location = new System.Drawing.Point(12, 105);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.ReadOnly = true;
+            this.richTextBox2.Size = new System.Drawing.Size(758, 93);
+            this.richTextBox2.TabIndex = 9;
+            this.richTextBox2.Text = "";
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.caloriesTxt);
             this.Controls.Add(this.label4);
@@ -157,5 +168,6 @@
         private TextBox caloriesTxt;
         private Label label4;
         private RichTextBox richTextBox1;
+        private RichTextBox richTextBox2;
     }
 }

@@ -21,4 +21,18 @@ namespace BD2122
             this.preparingTime = preparingTime;
         }
     }
+
+    internal class Ingredient
+    {
+        public string name { get; }
+        public double quantity { get; }
+        public string unit { get; }
+
+        internal Ingredient(string name, double quantity, string unit)
+        {
+            this.name = name;
+            this.quantity = quantity;
+            this.unit = unit;
+        }
+    }
 }

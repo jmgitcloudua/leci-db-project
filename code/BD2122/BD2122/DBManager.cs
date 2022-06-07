@@ -14,7 +14,7 @@ namespace BD2122
 
         private SqlConnection getSGBDConnection()
         {
-            return new SqlConnection("data source= localhost;integrated security=true;initial catalog=project");
+            return new SqlConnection("data source= localhost;integrated security=true;initial catalog=dbname");
         }
         
 		public Recipie? getRecipie(string name)
@@ -89,6 +89,30 @@ namespace BD2122
             return ingredients;
         }
 
+        public List<Ingredient> listIngredientAmounts(string recipie, string mass, string capacity, string temperature)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText =
+                "select * from dbo.GetIngredientAmounts(@Recipie, @Mass, @Capacity, @Temperature);";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@Recipie", recipie);
+            cmd.Parameters.AddWithValue("@Mass", mass);
+            cmd.Parameters.AddWithValue("@Capacity", capacity);
+            cmd.Parameters.AddWithValue("@Temperature", temperature);
+            cmd.Connection = con;
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            List<Ingredient> res = new List<Ingredient>();
+            while (reader.Read())
+            {
+                res.Add(new Ingredient(reader.GetString(0), reader.GetDou(1), reader.GetString(2)));
+            }
+
+            return res;
+        }
+
+        /*
         public void listIngredientAmounts(string recipie, string ingredient)
         {
             SqlCommand cmd = new SqlCommand();
@@ -123,6 +147,7 @@ namespace BD2122
             reader.Close();
             Console.WriteLine(quantity + unit);
         }
+        */
 
         public List<string> listUtensils(string recipie)
         {
