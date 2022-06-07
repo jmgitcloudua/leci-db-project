@@ -49,19 +49,46 @@ values
 (2, 2, 'Colher'),
 (3, 3, 'Chávena'),
 (4, 4, 'Batedeira');
+delete from usesIngredient;
 insert into usesIngredient
 (id, stepID, ingredientName, quantity, unit)
 values
 (1, 1, 'Tomate', 2, 'g'),
 (2, 2, 'Leite', 4, 'kg'),
-(3, 3, 'Tomate', 6, 'L'),
-(4, 4, 'Carne', 100, 'nC');
+(3, 3, 'Tomate', 6, 'g'),
+(4, 4, 'Carne', 100, 'kg');
 insert into belongs
 (recipieName, categoryName)
 values
 ('Target', 'Dieta');
 ('Another', 'Another');
 ('Padding', 'Another');
+
+-- Unit convertion
+
+go
+CREATE PROC ConvertUnits (@Val float, @From varchar(5), @To varchar(5))
+AS
+	select
+	case @From
+		when 'F' then
+			case @To
+				when 'C' then
+					(@Val - 32) * 5/9
+				else -500
+			end
+		when 'C' then
+			case @To
+				when 'F' then
+					(9/5 * @Val) + 32
+				else -500
+			end
+		else -1
+	end
+go
+
+DROP PROC ConvertUnits;
+EXEC ConvertUnits @Val=45.0, @From='C', @To='F'
 
 -- List ingredients
 
@@ -98,3 +125,11 @@ where belongs.categoryName = 'Dieta';
 select *
 from recipie
 where recipie.author = 'Me';
+
+-- List steps
+
+select step.description
+from has join step
+on has.stepID = step.stepID
+where has.recipieName = 'Target'
+order by has.stepNum;
