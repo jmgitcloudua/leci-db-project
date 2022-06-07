@@ -27,9 +27,16 @@ namespace BD2122
 
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.Read())
-                return new Recipie(reader.GetString(0), reader.GetString(1), reader.GetInt32(2), reader.GetInt32(3));
+            {
+                Recipie r = new Recipie(reader.GetString(0), reader.GetString(1), reader.GetInt32(2), reader.GetInt32(3));
+                reader.Close();
+                return r;
+            }
             else
+            {
+                reader.Close();
                 return null;
+            }
         }
 
         public List<Recipie> listRecipiesByAuthor(string author)
@@ -48,6 +55,7 @@ namespace BD2122
                 list.Add(new Recipie(reader.GetString(0), reader.GetString(1), reader.GetInt32(2), reader.GetInt32(3)));
             }
 
+            reader.Close();
             return list;
         }
         
@@ -77,6 +85,7 @@ namespace BD2122
                 ingredients.Add(reader.GetString(0));
             }
 
+            reader.Close();
             return ingredients;
         }
 
@@ -108,9 +117,10 @@ namespace BD2122
 
             while (reader.Read())
             {
-                quantity += convertUnit(reader.GetString(1), unit, reader.GetFloat(0));
+                quantity += 1; // convertUnit(reader.GetString(1), unit, reader.GetFloat(0));
             }
 
+            reader.Close();
             Console.WriteLine(quantity + unit);
         }
 
@@ -138,6 +148,32 @@ namespace BD2122
                 list.Add(reader.GetString(0));
             }
 
+            reader.Close();
+            return list;
+        }
+
+        public List<string> listSteps(string recipie)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText =
+                @"  select step.description
+                    from has join step
+                        on has.stepID = step.stepID
+                    where has.recipieName = @recipie
+                    order by has.stepNum;";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@recipie", recipie);
+            cmd.Connection = con;
+
+            List<string> list = new List<string>();
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                list.Add(reader.GetString(0));
+            }
+
+            reader.Close();
             return list;
         }
 
@@ -335,6 +371,7 @@ namespace BD2122
             cmd.ExecuteNonQuery();
         }
 
+        /*
         public float convertUnit(string from, string to, float value)
         {
             switch (from) {
@@ -344,7 +381,7 @@ namespace BD2122
                         case "kg": // g -> kg
                             return 1000 * value;
                         case "oz": // g -> oz
-                            return value /  f;
+                            return value / f;
                         default:
                             return -1;
                     }
@@ -418,5 +455,6 @@ namespace BD2122
                     return -1;
             }
         }
+        */
     }
 }

@@ -37,6 +37,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.caloriesTxt = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // recipieNameTxt
@@ -113,11 +114,21 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Calories";
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(12, 128);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(758, 310);
+            this.richTextBox1.TabIndex = 9;
+            this.richTextBox1.Text = "";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.caloriesTxt);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.timeTxt);
@@ -145,5 +156,6 @@
         private Label label3;
         private TextBox caloriesTxt;
         private Label label4;
+        private RichTextBox richTextBox1;
     }
 }

@@ -29,6 +29,13 @@ namespace BD2122
             authorTxt.Text = r.author;
             timeTxt.Text = r.preparingTime.ToString();
             caloriesTxt.Text = r.calories.ToString();
+
+            List<string> steps = dbManager.listSteps(r.name);
+            
+            foreach (string step in steps)
+            {
+                richTextBox1.Text += step + '\n';
+            }
         }
     }
 }

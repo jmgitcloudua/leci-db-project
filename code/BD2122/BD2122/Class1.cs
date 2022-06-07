@@ -70,6 +70,8 @@ namespace BD2122
             {
                 ingredients.Add(reader.GetString(0));
             }
+
+            return ingredients;
         }
 
         public void listIngredientAmounts(string recipie, string ingredient)
