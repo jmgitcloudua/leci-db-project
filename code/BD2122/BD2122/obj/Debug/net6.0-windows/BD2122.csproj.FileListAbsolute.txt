@@ -23,3 +23,14 @@ Z:\BD\projeto\code\BD2122\BD2122\obj\Debug\net6.0-windows\refint\BD2122.dll
 Z:\BD\projeto\code\BD2122\BD2122\obj\Debug\net6.0-windows\BD2122.pdb
 Z:\BD\projeto\code\BD2122\BD2122\obj\Debug\net6.0-windows\BD2122.genruntimeconfig.cache
 Z:\BD\projeto\code\BD2122\BD2122\obj\Debug\net6.0-windows\ref\BD2122.dll
+C:\Users\jmuac\source\repos\leci-db-project\code\BD2122\BD2122\obj\Debug\net6.0-windows\BD2122.csproj.AssemblyReference.cache
+C:\Users\jmuac\source\repos\leci-db-project\code\BD2122\BD2122\obj\Debug\net6.0-windows\BD2122.Form1.resources
+C:\Users\jmuac\source\repos\leci-db-project\code\BD2122\BD2122\obj\Debug\net6.0-windows\BD2122.Form2.resources
+C:\Users\jmuac\source\repos\leci-db-project\code\BD2122\BD2122\obj\Debug\net6.0-windows\BD2122.csproj.GenerateResource.cache
+C:\Users\jmuac\source\repos\leci-db-project\code\BD2122\BD2122\obj\Debug\net6.0-windows\BD2122.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jmuac\source\repos\leci-db-project\code\BD2122\BD2122\obj\Debug\net6.0-windows\BD2122.AssemblyInfoInputs.cache
+C:\Users\jmuac\source\repos\leci-db-project\code\BD2122\BD2122\obj\Debug\net6.0-windows\BD2122.AssemblyInfo.cs
+C:\Users\jmuac\source\repos\leci-db-project\code\BD2122\BD2122\obj\Debug\net6.0-windows\BD2122.csproj.CoreCompileInputs.cache
+C:\Users\jmuac\source\repos\leci-db-project\code\BD2122\BD2122\obj\Debug\net6.0-windows\BD2122.dll
+C:\Users\jmuac\source\repos\leci-db-project\code\BD2122\BD2122\obj\Debug\net6.0-windows\refint\BD2122.dll
+C:\Users\jmuac\source\repos\leci-db-project\code\BD2122\BD2122\obj\Debug\net6.0-windows\BD2122.pdb

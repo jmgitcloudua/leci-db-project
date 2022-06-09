@@ -14,7 +14,7 @@ namespace BD2122
 
         private SqlConnection getSGBDConnection()
         {
-            return new SqlConnection("data source= localhost;integrated security=true;initial catalog=dbname");
+            return new SqlConnection("data source= localhost;integrated security=true;initial catalog=lecidbproject");
         }
         
 		public Recipie? getRecipie(string name)
