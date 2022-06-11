@@ -130,9 +130,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label3.Location = new System.Drawing.Point(256, 10);
+            this.label3.Location = new System.Drawing.Point(292, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(13, 15);
+            this.label3.Size = new System.Drawing.Size(17, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "1";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -313,6 +313,7 @@
             this.btnStepInsert.TabIndex = 4;
             this.btnStepInsert.Text = "INSERIR";
             this.btnStepInsert.UseVisualStyleBackColor = false;
+            this.btnStepInsert.Click += new System.EventHandler(this.btnStepInsert_click);
             // 
             // label5
             // 
