@@ -187,76 +187,44 @@ AS --BEGIN
 	)
 --END
 go
-/*
-CREATE FUNCTION dbo.GetIngredientAmounts (@Recipie name, @Mass varchar(5), @Volume varchar(5), @Temperature varchar(5)) returns @res table (ingredientName name, quantity float, unit varchar(5))
-AS BEGIN
-	declare @ingredientName name, @quantity float, @unit varchar(5);
-	declare c cursor fast_forward for 
-		select distinct ingredient.ingredientName
-		from
-			(
-				ingredient join usesIngredient
-				on ingredient.ingredientName = usesIngredient.ingredientName
-			) join (
-				has join step
-				on has.stepID = step.stepID
-			) on usesIngredient.stepID = step.stepID
-		where has.recipieName = @Recipie;
 
-	open c;
-	fetch c into @ingredientName; --, @quantity, @unit;
-
-	while @@FETCH_STATUS = 0 begin
-		select @quantity = sum(
-				dbo.ConvertUnits(usesIngredient.quantity, usesIngredient.unit, dbo.GetDestinyUnit(usesIngredient.unit, @Mass, @Volume, @Temperature))
-			)
-		from
-			usesIngredient
-			join (
-				has join step
-				on has.stepID = step.stepID
-			) on usesIngredient.stepID = step.stepID
-		where has.recipieName = @Recipie and usesIngredient.ingredientName = @ingredientName
-	
-		select top 1 @unit = 
-		dbo.GetDestinyUnit(usesIngredient.unit, @Mass, @Volume, @Temperature)
-		from usesIngredient
-				join (
-					has join step
-					on has.stepID = step.stepID
-				) on usesIngredient.stepID = step.stepID
-		where has.recipieName = @Recipie and usesIngredient.ingredientName = @ingredientName 
-
-		-- print @quantity + @Unit;
-		DECLARE @ExecuteString  varchar(500);
-		select @ExecuteString = 'echo ' + STR(@quantity) + @Unit + ' >> file.txt';
-		exec master..xp_cmdshell @ExecuteString, no_output
-
-		insert @res (ingredientName, quantity, unit) select @ingredientName, @quantity, @unit
-	end
-
-	return;
-	/*
-	
-	declare @f_ingredientName name, @f_quantity float, @f_unit varchar(5);
-	select @f_quantity = 0;
-	return (
-		select usesIngredient.ingredientName, sum(
-				dbo.ConvertUnits(usesIngredient.quantity, usesIngredient.unit, dbo.GetDestinyUnit(usesIngredient.unit, @Mass, @Volume, @Temperature))
-			), dbo.GetDestinyUnit(usesIngredient.unit, @Mass, @Volume, @Temperature)
-		from
-			usesIngredient
-			join (
-				has join step
-				on has.stepID = step.stepID
-			) on usesIngredient.stepID = step.stepID
-		where has.recipieName = @Recipie
-		group by usesIngredient.ingredientName
-	)
-	*/
-end
 go
-*/
+CREATE PROC AddStep (@recipieName name, @stepNum int, @description text, @image varchar(20))
+AS BEGIN
+BEGIN TRAN
+	declare @lenStep int;
+	select @lenStep = count(*) from step;
+	declare @lenHas int;
+	select @lenHas = count(*) from has;
+
+	insert into step
+	(stepID, description, image)
+	values
+	(@lenStep, @description, @image);
+	insert into has
+	(id, recipieName, stepID, stepNum)
+	values
+	(@lenHas, @recipieName, @lenStep, @stepNum);
+COMMIT TRAN
+END
+
+go
+CREATE PROC AddIngredient (@ingredientName varchar(20), @description text, @stepID int, @quantity float, @unit varchar(5))
+AS BEGIN
+BEGIN TRAN
+	declare @lenUse int;
+	select @lenUse = count(*) from usesIngredient;
+
+	insert into ingredient
+	(ingredientName, description)
+	values
+	(@ingredientName, @description);
+	insert into usesIngredient
+	(id, stepID, ingredientName, quantity, unit)
+	values
+	(@lenUse, @stepID, @ingredientName, @quantity, @unit);
+COMMIT TRAN
+END
 
 -- this turns on advanced options and is needed to configure xp_cmdshell
 EXEC sp_configure 'show advanced options', '1'

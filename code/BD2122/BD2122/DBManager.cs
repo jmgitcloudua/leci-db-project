@@ -14,7 +14,7 @@ namespace BD2122
 
         private SqlConnection getSGBDConnection()
         {
-            return new SqlConnection("data source= localhost;integrated security=true;initial catalog=lecidbproject");
+            return new SqlConnection("data source= localhost;integrated security=true;initial catalog=dbname");
         }
         
 		public Recipie? getRecipie(string name)
@@ -106,7 +106,7 @@ namespace BD2122
             List<Ingredient> res = new List<Ingredient>();
             while (reader.Read())
             {
-                res.Add(new Ingredient(reader.GetString(0), reader.GetDou(1), reader.GetString(2)));
+                res.Add(new Ingredient(reader.GetString(0), reader.GetDouble(1), reader.GetString(2)));
             }
 
             return res;
@@ -356,6 +356,37 @@ namespace BD2122
             cmd.Parameters.AddWithValue("@utensilName", utensilName);
             cmd.Parameters.AddWithValue("@stepID", stepID);
             cmd.Parameters.AddWithValue("@id", id);
+            cmd.Connection = con;
+
+            cmd.ExecuteNonQuery();
+        }
+
+        public void addStepTran(string recipieName, int stepNum, string description, string image)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText =
+                "exec AddStep @recipieName, @stepNum, @description, @image";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@recipieName", recipieName);
+            cmd.Parameters.AddWithValue("@stepNum", stepNum);
+            cmd.Parameters.AddWithValue("@description", description);
+            cmd.Parameters.AddWithValue("@image", image);
+            cmd.Connection = con;
+
+            cmd.ExecuteNonQuery();
+        }
+
+        public void addIngredientTran(string ingredientName, string description, int stepID, int quantity, string unit)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText =
+                "exec AddStep @ingredientName, @description, @stepID, @quantity, @unit";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@ingredientName", ingredientName);
+            cmd.Parameters.AddWithValue("@description", description);
+            cmd.Parameters.AddWithValue("@stepID", stepID);
+            cmd.Parameters.AddWithValue("@quantity", quantity);
+            cmd.Parameters.AddWithValue("@unit", unit);
             cmd.Connection = con;
 
             cmd.ExecuteNonQuery();
