@@ -29,37 +29,46 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.bntRecipeInsert = new System.Windows.Forms.Button();
             this.txtBoxRecipePreparingTime = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtBoxRecipeCalories = new System.Windows.Forms.TextBox();
             this.txtBoxRecipeName = new System.Windows.Forms.TextBox();
-            this.txtBoxRecipeDuration = new System.Windows.Forms.TextBox();
             this.txtBoxRecipeAuthorName = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnIngredientInsert = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtBoxIngreRecipeName = new System.Windows.Forms.TextBox();
             this.txtBoxIngredientName = new System.Windows.Forms.TextBox();
-            this.txtBoxIngredientQuanity = new System.Windows.Forms.TextBox();
-            this.textBoxIngredientDescription = new System.Windows.Forms.TextBox();
+            this.txtBoxIngredientDescription = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnInsertStep = new System.Windows.Forms.Button();
             this.btnUploadImage = new System.Windows.Forms.Button();
-            this.txtBoxStepRecipeName = new System.Windows.Forms.TextBox();
             this.btnStepInsert = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.txtBoxStepNumber = new System.Windows.Forms.TextBox();
-            this.txtBoxStepDescriptio = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.txtBoxStepDescription = new System.Windows.Forms.TextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnInsertCategory = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtBoxCategoryName = new System.Windows.Forms.TextBox();
+            this.txtBoxCategoryDescription = new System.Windows.Forms.TextBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.txtBoxUtensilUnit = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtBoxUtensilName = new System.Windows.Forms.TextBox();
+            this.txtBoxUtensilDimension = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -93,20 +102,29 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtBoxRecipeCalories);
             this.groupBox1.Controls.Add(this.txtBoxRecipeName);
-            this.groupBox1.Controls.Add(this.txtBoxRecipeDuration);
             this.groupBox1.Controls.Add(this.txtBoxRecipeAuthorName);
             this.groupBox1.Location = new System.Drawing.Point(31, 107);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(315, 449);
+            this.groupBox1.Size = new System.Drawing.Size(315, 560);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "RECEITA";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label6.Location = new System.Drawing.Point(298, 13);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(17, 20);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "1";
             // 
             // bntRecipeInsert
             // 
             this.bntRecipeInsert.BackColor = System.Drawing.Color.RoyalBlue;
             this.bntRecipeInsert.ForeColor = System.Drawing.Color.Black;
-            this.bntRecipeInsert.Location = new System.Drawing.Point(87, 372);
+            this.bntRecipeInsert.Location = new System.Drawing.Point(73, 494);
             this.bntRecipeInsert.Name = "bntRecipeInsert";
             this.bntRecipeInsert.Size = new System.Drawing.Size(113, 39);
             this.bntRecipeInsert.TabIndex = 4;
@@ -116,7 +134,7 @@
             // 
             // txtBoxRecipePreparingTime
             // 
-            this.txtBoxRecipePreparingTime.Location = new System.Drawing.Point(16, 291);
+            this.txtBoxRecipePreparingTime.Location = new System.Drawing.Point(16, 232);
             this.txtBoxRecipePreparingTime.Name = "txtBoxRecipePreparingTime";
             this.txtBoxRecipePreparingTime.PlaceholderText = "Insira o tempo de preparação";
             this.txtBoxRecipePreparingTime.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -136,7 +154,7 @@
             // 
             // txtBoxRecipeCalories
             // 
-            this.txtBoxRecipeCalories.Location = new System.Drawing.Point(16, 232);
+            this.txtBoxRecipeCalories.Location = new System.Drawing.Point(16, 179);
             this.txtBoxRecipeCalories.Name = "txtBoxRecipeCalories";
             this.txtBoxRecipeCalories.PlaceholderText = "Insira a caloria";
             this.txtBoxRecipeCalories.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -152,15 +170,6 @@
             this.txtBoxRecipeName.Size = new System.Drawing.Size(276, 27);
             this.txtBoxRecipeName.TabIndex = 4;
             // 
-            // txtBoxRecipeDuration
-            // 
-            this.txtBoxRecipeDuration.Location = new System.Drawing.Point(16, 179);
-            this.txtBoxRecipeDuration.Name = "txtBoxRecipeDuration";
-            this.txtBoxRecipeDuration.PlaceholderText = "Insira a duração";
-            this.txtBoxRecipeDuration.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtBoxRecipeDuration.Size = new System.Drawing.Size(276, 27);
-            this.txtBoxRecipeDuration.TabIndex = 6;
-            // 
             // txtBoxRecipeAuthorName
             // 
             this.txtBoxRecipeAuthorName.Location = new System.Drawing.Point(16, 125);
@@ -174,13 +183,11 @@
             // 
             this.groupBox2.Controls.Add(this.btnIngredientInsert);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.txtBoxIngreRecipeName);
             this.groupBox2.Controls.Add(this.txtBoxIngredientName);
-            this.groupBox2.Controls.Add(this.txtBoxIngredientQuanity);
-            this.groupBox2.Controls.Add(this.textBoxIngredientDescription);
+            this.groupBox2.Controls.Add(this.txtBoxIngredientDescription);
             this.groupBox2.Location = new System.Drawing.Point(422, 107);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(315, 449);
+            this.groupBox2.Size = new System.Drawing.Size(315, 259);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "INGREDIENTES";
@@ -189,7 +196,7 @@
             // 
             this.btnIngredientInsert.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnIngredientInsert.ForeColor = System.Drawing.Color.Black;
-            this.btnIngredientInsert.Location = new System.Drawing.Point(104, 372);
+            this.btnIngredientInsert.Location = new System.Drawing.Point(89, 203);
             this.btnIngredientInsert.Name = "btnIngredientInsert";
             this.btnIngredientInsert.Size = new System.Drawing.Size(113, 39);
             this.btnIngredientInsert.TabIndex = 4;
@@ -207,15 +214,6 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "2";
             // 
-            // txtBoxIngreRecipeName
-            // 
-            this.txtBoxIngreRecipeName.Location = new System.Drawing.Point(16, 232);
-            this.txtBoxIngreRecipeName.Name = "txtBoxIngreRecipeName";
-            this.txtBoxIngreRecipeName.PlaceholderText = "Insira o nome da receita";
-            this.txtBoxIngreRecipeName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtBoxIngreRecipeName.Size = new System.Drawing.Size(276, 27);
-            this.txtBoxIngreRecipeName.TabIndex = 7;
-            // 
             // txtBoxIngredientName
             // 
             this.txtBoxIngredientName.Location = new System.Drawing.Point(16, 68);
@@ -224,25 +222,17 @@
             this.txtBoxIngredientName.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtBoxIngredientName.Size = new System.Drawing.Size(276, 27);
             this.txtBoxIngredientName.TabIndex = 4;
+            this.txtBoxIngredientName.TextChanged += new System.EventHandler(this.txtBoxIngredientName_TextChanged);
             // 
-            // txtBoxIngredientQuanity
+            // txtBoxIngredientDescription
             // 
-            this.txtBoxIngredientQuanity.Location = new System.Drawing.Point(16, 179);
-            this.txtBoxIngredientQuanity.Name = "txtBoxIngredientQuanity";
-            this.txtBoxIngredientQuanity.PlaceholderText = "Insira a quantidade";
-            this.txtBoxIngredientQuanity.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtBoxIngredientQuanity.Size = new System.Drawing.Size(276, 27);
-            this.txtBoxIngredientQuanity.TabIndex = 6;
-            // 
-            // textBoxIngredientDescription
-            // 
-            this.textBoxIngredientDescription.Location = new System.Drawing.Point(16, 125);
-            this.textBoxIngredientDescription.Multiline = true;
-            this.textBoxIngredientDescription.Name = "textBoxIngredientDescription";
-            this.textBoxIngredientDescription.PlaceholderText = "Insira a descrição";
-            this.textBoxIngredientDescription.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBoxIngredientDescription.Size = new System.Drawing.Size(276, 27);
-            this.textBoxIngredientDescription.TabIndex = 5;
+            this.txtBoxIngredientDescription.Location = new System.Drawing.Point(16, 125);
+            this.txtBoxIngredientDescription.Multiline = true;
+            this.txtBoxIngredientDescription.Name = "txtBoxIngredientDescription";
+            this.txtBoxIngredientDescription.PlaceholderText = "Insira a descrição";
+            this.txtBoxIngredientDescription.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtBoxIngredientDescription.Size = new System.Drawing.Size(276, 27);
+            this.txtBoxIngredientDescription.TabIndex = 5;
             // 
             // contextMenuStrip1
             // 
@@ -252,37 +242,41 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnInsertStep);
             this.groupBox3.Controls.Add(this.btnUploadImage);
-            this.groupBox3.Controls.Add(this.txtBoxStepRecipeName);
             this.groupBox3.Controls.Add(this.btnStepInsert);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.txtBoxStepNumber);
-            this.groupBox3.Controls.Add(this.txtBoxStepDescriptio);
-            this.groupBox3.Location = new System.Drawing.Point(809, 107);
+            this.groupBox3.Controls.Add(this.txtBoxStepDescription);
+            this.groupBox3.Location = new System.Drawing.Point(807, 385);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(315, 449);
+            this.groupBox3.Size = new System.Drawing.Size(315, 282);
             this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "STEP";
             // 
+            // btnInsertStep
+            // 
+            this.btnInsertStep.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnInsertStep.ForeColor = System.Drawing.Color.Black;
+            this.btnInsertStep.Location = new System.Drawing.Point(104, 216);
+            this.btnInsertStep.Name = "btnInsertStep";
+            this.btnInsertStep.Size = new System.Drawing.Size(113, 39);
+            this.btnInsertStep.TabIndex = 6;
+            this.btnInsertStep.Text = "INSERIR";
+            this.btnInsertStep.UseVisualStyleBackColor = false;
+            this.btnInsertStep.Click += new System.EventHandler(this.btnStepInsert_Click);
+            // 
             // btnUploadImage
             // 
-            this.btnUploadImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUploadImage.BackgroundImage")));
-            this.btnUploadImage.Location = new System.Drawing.Point(25, 232);
+            this.btnUploadImage.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnUploadImage.Location = new System.Drawing.Point(16, 152);
             this.btnUploadImage.Name = "btnUploadImage";
-            this.btnUploadImage.Size = new System.Drawing.Size(267, 127);
+            this.btnUploadImage.Size = new System.Drawing.Size(276, 43);
             this.btnUploadImage.TabIndex = 9;
             this.btnUploadImage.Text = "Upload image";
-            this.btnUploadImage.UseVisualStyleBackColor = true;
-            // 
-            // txtBoxStepRecipeName
-            // 
-            this.txtBoxStepRecipeName.Location = new System.Drawing.Point(16, 179);
-            this.txtBoxStepRecipeName.Name = "txtBoxStepRecipeName";
-            this.txtBoxStepRecipeName.PlaceholderText = "Insira o nome da receita";
-            this.txtBoxStepRecipeName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtBoxStepRecipeName.Size = new System.Drawing.Size(276, 27);
-            this.txtBoxStepRecipeName.TabIndex = 8;
+            this.btnUploadImage.UseVisualStyleBackColor = false;
+            this.btnUploadImage.Click += new System.EventHandler(this.btnUploadImg_Click);
             // 
             // btnStepInsert
             // 
@@ -303,11 +297,11 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(17, 20);
             this.label5.TabIndex = 4;
-            this.label5.Text = "3";
+            this.label5.Text = "5";
             // 
             // txtBoxStepNumber
             // 
-            this.txtBoxStepNumber.Location = new System.Drawing.Point(16, 68);
+            this.txtBoxStepNumber.Location = new System.Drawing.Point(16, 52);
             this.txtBoxStepNumber.Name = "txtBoxStepNumber";
             this.txtBoxStepNumber.PlaceholderText = "Insira o número";
             this.txtBoxStepNumber.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -315,30 +309,141 @@
             this.txtBoxStepNumber.TabIndex = 7;
             this.txtBoxStepNumber.TextChanged += new System.EventHandler(this.txtBoxStepNumber_TextChanged);
             // 
-            // txtBoxStepDescriptio
+            // txtBoxStepDescription
             // 
-            this.txtBoxStepDescriptio.Location = new System.Drawing.Point(16, 125);
-            this.txtBoxStepDescriptio.Name = "txtBoxStepDescriptio";
-            this.txtBoxStepDescriptio.PlaceholderText = "Insira a descrição";
-            this.txtBoxStepDescriptio.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtBoxStepDescriptio.Size = new System.Drawing.Size(276, 27);
-            this.txtBoxStepDescriptio.TabIndex = 6;
+            this.txtBoxStepDescription.Location = new System.Drawing.Point(16, 110);
+            this.txtBoxStepDescription.Name = "txtBoxStepDescription";
+            this.txtBoxStepDescription.PlaceholderText = "Insira a descrição";
+            this.txtBoxStepDescription.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtBoxStepDescription.Size = new System.Drawing.Size(276, 27);
+            this.txtBoxStepDescription.TabIndex = 6;
             // 
-            // label6
+            // groupBox4
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label6.Location = new System.Drawing.Point(298, 13);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(17, 20);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "1";
+            this.groupBox4.Controls.Add(this.btnInsertCategory);
+            this.groupBox4.Controls.Add(this.label7);
+            this.groupBox4.Controls.Add(this.txtBoxCategoryName);
+            this.groupBox4.Controls.Add(this.txtBoxCategoryDescription);
+            this.groupBox4.Location = new System.Drawing.Point(422, 372);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(315, 295);
+            this.groupBox4.TabIndex = 10;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "CATEGORIA";
+            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
+            // 
+            // btnInsertCategory
+            // 
+            this.btnInsertCategory.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnInsertCategory.ForeColor = System.Drawing.Color.Black;
+            this.btnInsertCategory.Location = new System.Drawing.Point(89, 229);
+            this.btnInsertCategory.Name = "btnInsertCategory";
+            this.btnInsertCategory.Size = new System.Drawing.Size(113, 39);
+            this.btnInsertCategory.TabIndex = 4;
+            this.btnInsertCategory.Text = "INSERIR";
+            this.btnInsertCategory.UseVisualStyleBackColor = false;
+            this.btnInsertCategory.Click += new System.EventHandler(this.btnCategoryInsert_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label7.Location = new System.Drawing.Point(293, 13);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(17, 20);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "3";
+            // 
+            // txtBoxCategoryName
+            // 
+            this.txtBoxCategoryName.Location = new System.Drawing.Point(16, 68);
+            this.txtBoxCategoryName.Name = "txtBoxCategoryName";
+            this.txtBoxCategoryName.PlaceholderText = "Insira o nome";
+            this.txtBoxCategoryName.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtBoxCategoryName.Size = new System.Drawing.Size(276, 27);
+            this.txtBoxCategoryName.TabIndex = 4;
+            // 
+            // txtBoxCategoryDescription
+            // 
+            this.txtBoxCategoryDescription.Location = new System.Drawing.Point(16, 125);
+            this.txtBoxCategoryDescription.Multiline = true;
+            this.txtBoxCategoryDescription.Name = "txtBoxCategoryDescription";
+            this.txtBoxCategoryDescription.PlaceholderText = "Insira a descrição";
+            this.txtBoxCategoryDescription.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtBoxCategoryDescription.Size = new System.Drawing.Size(276, 27);
+            this.txtBoxCategoryDescription.TabIndex = 5;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.txtBoxUtensilUnit);
+            this.groupBox5.Controls.Add(this.button1);
+            this.groupBox5.Controls.Add(this.label8);
+            this.groupBox5.Controls.Add(this.txtBoxUtensilName);
+            this.groupBox5.Controls.Add(this.txtBoxUtensilDimension);
+            this.groupBox5.Location = new System.Drawing.Point(807, 107);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(315, 259);
+            this.groupBox5.TabIndex = 11;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "UTENSÍLIO";
+            // 
+            // txtBoxUtensilUnit
+            // 
+            this.txtBoxUtensilUnit.Location = new System.Drawing.Point(16, 158);
+            this.txtBoxUtensilUnit.Name = "txtBoxUtensilUnit";
+            this.txtBoxUtensilUnit.PlaceholderText = "Insira a unidade";
+            this.txtBoxUtensilUnit.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtBoxUtensilUnit.Size = new System.Drawing.Size(276, 27);
+            this.txtBoxUtensilUnit.TabIndex = 6;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(104, 203);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(113, 39);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "INSERIR";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.btnUtensilInsert_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label8.Location = new System.Drawing.Point(293, 13);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(17, 20);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "4";
+            // 
+            // txtBoxUtensilName
+            // 
+            this.txtBoxUtensilName.Location = new System.Drawing.Point(16, 68);
+            this.txtBoxUtensilName.Name = "txtBoxUtensilName";
+            this.txtBoxUtensilName.PlaceholderText = "Insira o nome";
+            this.txtBoxUtensilName.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtBoxUtensilName.Size = new System.Drawing.Size(276, 27);
+            this.txtBoxUtensilName.TabIndex = 4;
+            // 
+            // txtBoxUtensilDimension
+            // 
+            this.txtBoxUtensilDimension.Location = new System.Drawing.Point(16, 110);
+            this.txtBoxUtensilDimension.Multiline = true;
+            this.txtBoxUtensilDimension.Name = "txtBoxUtensilDimension";
+            this.txtBoxUtensilDimension.PlaceholderText = "Insira a dimensão";
+            this.txtBoxUtensilDimension.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtBoxUtensilDimension.Size = new System.Drawing.Size(276, 27);
+            this.txtBoxUtensilDimension.TabIndex = 5;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1175, 600);
+            this.ClientSize = new System.Drawing.Size(1206, 700);
+            this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -354,6 +459,10 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -367,26 +476,34 @@
         private Label label3;
         private TextBox txtBoxRecipeName;
         private TextBox txtBoxRecipeAuthorName;
-        private TextBox txtBoxRecipeDuration;
         private Button bntRecipeInsert;
         private TextBox txtBoxRecipePreparingTime;
         private TextBox txtBoxRecipeCalories;
         private GroupBox groupBox2;
         private Button btnIngredientInsert;
         private Label label4;
-        private TextBox txtBoxIngreRecipeName;
         private TextBox txtBoxIngredientName;
-        private TextBox txtBoxIngredientQuanity;
-        private TextBox textBoxIngredientDescription;
+        private TextBox txtBoxIngredientDescription;
         private ContextMenuStrip contextMenuStrip1;
         private GroupBox groupBox3;
         private Button btnStepInsert;
         private Label label5;
         private TextBox txtBoxStepNumber;
-        private TextBox txtBoxStepDescriptio;
+        private TextBox txtBoxStepDescription;
         private Button btnUploadImage;
-        private TextBox txtBoxStepRecipeName;
         private Label label6;
+        private GroupBox groupBox4;
+        private Button btnInsertCategory;
+        private Label label7;
+        private TextBox txtBoxCategoryName;
+        private TextBox txtBoxCategoryDescription;
+        private GroupBox groupBox5;
+        private TextBox txtBoxUtensilUnit;
+        private Button button1;
+        private Label label8;
+        private TextBox txtBoxUtensilName;
+        private TextBox txtBoxUtensilDimension;
+        private Button btnInsertStep;
 
         public EventHandler btnStepInsert_click { get; private set; }
     }
