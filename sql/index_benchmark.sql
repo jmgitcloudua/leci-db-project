@@ -1,4 +1,5 @@
 use dbname;
+create index belongsCatName on belongs(categoryName) 
 
 drop proc [dbo].[CreateRandomString];
 
@@ -75,6 +76,16 @@ print @str
 ---/---------------|
 --<		BENCHMARKS |
 ---\---------------|
+
+-- INDEXES
+-- create index belongsCatName on belongs(categoryName) 
+
+create index hasRecName on has(recipieName) 
+--create index hasStepNum on has(stepNum) 
+
+create index recipieName on recipie(name) 
+--create index recipieAuthor on recipie(author) 
+-- TO CHANGE EVERY SCRIPT RUN
 
 -- Record the Start Time
 DECLARE @start_time DATETIME, @end_time DATETIME;
