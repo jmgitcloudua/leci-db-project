@@ -80,6 +80,11 @@ print @str
 -- INDEXES
 -- create index belongsCatName on belongs(categoryName) 
 
+drop index hasRecName
+-- drop index hasStepNum
+drop index recipieName
+-- drop index recipieAuthor
+
 create index hasRecName on has(recipieName) 
 --create index hasStepNum on has(stepNum) 
 
