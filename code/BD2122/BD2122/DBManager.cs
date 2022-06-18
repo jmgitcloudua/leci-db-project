@@ -14,7 +14,7 @@ namespace BD2122
 
         private SqlConnection getSGBDConnection()
         {
-            return new SqlConnection("data source= XCLOUD\\SQLEXPRESS;integrated security=true;initial catalog=lecidbproject");
+            return new SqlConnection("data source= localhost;integrated security=true;initial catalog=dbname");
         }
         
 		public Recipie? getRecipie(string name)
@@ -260,7 +260,7 @@ namespace BD2122
             cmd.ExecuteNonQuery();
         }
 
-        public void insertUtensil(string utensilName, int dimention, string unit)
+        public void insertUtensil(string utensilName, string dimention, int unit)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText =

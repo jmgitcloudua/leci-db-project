@@ -45,10 +45,5 @@ namespace BD2122
             }
             
         }
-
-        private void timeTxt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

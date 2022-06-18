@@ -29,109 +29,126 @@
         private void InitializeComponent()
         {
             this.recipieNameTxt = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.authorTxt = new System.Windows.Forms.TextBox();
             this.timeTxt = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.caloriesTxt = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // recipieNameTxt
             // 
-            this.recipieNameTxt.Location = new System.Drawing.Point(12, 48);
-            this.recipieNameTxt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.recipieNameTxt.Location = new System.Drawing.Point(109, 12);
             this.recipieNameTxt.Name = "recipieNameTxt";
-            this.recipieNameTxt.PlaceholderText = "Insira nome de receita";
-            this.recipieNameTxt.Size = new System.Drawing.Size(383, 27);
+            this.recipieNameTxt.Size = new System.Drawing.Size(336, 23);
             this.recipieNameTxt.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 15);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Recipie Name";
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button1.Location = new System.Drawing.Point(484, 44);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Location = new System.Drawing.Point(603, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 31);
+            this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
-            this.button1.Text = "PESQUISAR";
-            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Text = "search";
+            this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(11, 76);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 15);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Author";
             // 
             // authorTxt
             // 
-            this.authorTxt.Location = new System.Drawing.Point(14, 98);
-            this.authorTxt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.authorTxt.Location = new System.Drawing.Point(61, 73);
             this.authorTxt.Name = "authorTxt";
-            this.authorTxt.PlaceholderText = "Insira o nome do autor";
-            this.authorTxt.Size = new System.Drawing.Size(190, 27);
+            this.authorTxt.Size = new System.Drawing.Size(167, 23);
             this.authorTxt.TabIndex = 4;
             // 
             // timeTxt
             // 
-            this.timeTxt.Location = new System.Drawing.Point(238, 98);
-            this.timeTxt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.timeTxt.Location = new System.Drawing.Point(373, 76);
             this.timeTxt.Name = "timeTxt";
-            this.timeTxt.PlaceholderText = "Insira tempo de preparação";
-            this.timeTxt.Size = new System.Drawing.Size(199, 27);
+            this.timeTxt.Size = new System.Drawing.Size(126, 23);
             this.timeTxt.TabIndex = 6;
-            this.timeTxt.TextChanged += new System.EventHandler(this.timeTxt_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(282, 79);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(85, 15);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Preparing time";
             // 
             // caloriesTxt
             // 
-            this.caloriesTxt.Location = new System.Drawing.Point(484, 98);
-            this.caloriesTxt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.caloriesTxt.Location = new System.Drawing.Point(603, 76);
             this.caloriesTxt.Name = "caloriesTxt";
-            this.caloriesTxt.PlaceholderText = "Insira calorias";
-            this.caloriesTxt.Size = new System.Drawing.Size(190, 27);
+            this.caloriesTxt.Size = new System.Drawing.Size(167, 23);
             this.caloriesTxt.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(553, 79);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 15);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Calories";
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(14, 272);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.richTextBox1.Location = new System.Drawing.Point(12, 204);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(866, 311);
+            this.richTextBox1.Size = new System.Drawing.Size(758, 234);
             this.richTextBox1.TabIndex = 10;
             this.richTextBox1.Text = "";
             // 
             // richTextBox2
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(14, 140);
-            this.richTextBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.richTextBox2.Location = new System.Drawing.Point(12, 105);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.ReadOnly = true;
-            this.richTextBox2.Size = new System.Drawing.Size(866, 123);
+            this.richTextBox2.Size = new System.Drawing.Size(758, 93);
             this.richTextBox2.TabIndex = 9;
             this.richTextBox2.Text = "";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label1.Location = new System.Drawing.Point(202, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(351, 16);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "SISTEMA DE GESTÃO DE RCEITAS CULINÁRIAS";
-            // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 600);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.caloriesTxt);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.timeTxt);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.authorTxt);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.recipieNameTxt);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form2";
             this.Text = "Form2";
             this.ResumeLayout(false);
@@ -142,12 +159,15 @@
         #endregion
 
         private TextBox recipieNameTxt;
+        private Label label1;
         private Button button1;
+        private Label label2;
         private TextBox authorTxt;
         private TextBox timeTxt;
+        private Label label3;
         private TextBox caloriesTxt;
+        private Label label4;
         private RichTextBox richTextBox1;
         private RichTextBox richTextBox2;
-        private Label label1;
     }
 }

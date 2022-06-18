@@ -151,6 +151,9 @@ PRINT 'Inserted ' + str(@nelem) + ' total records'
 -- Duration of Insertion Process
 SET @end_time = GETDATE();
 PRINT 'Milliseconds used: ' + CONVERT(VARCHAR(20), DATEDIFF(MILLISECOND,
-@start_time, @end_time));
+@start_time, @end_time))
 
 -- Qual a percentagem de fragmentação dos índices e de ocupação das páginas dos índices?
+
+SELECT * FROM sys.dm_db_index_physical_stats (DB_ID('dbname'), object_id('dbo.recipie'),null, null, 'DETAILED');
+SELECT * FROM sys.dm_db_index_physical_stats (DB_ID('dbname'), object_id('dbo.has'),null, null, 'DETAILED');

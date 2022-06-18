@@ -8,7 +8,7 @@ namespace BD2122
 
         private SqlConnection getSGBDConnection()
         {
-            return new SqlConnection("data source= XCLOUD\\SQLEXPRESS;integrated security=true;initial catalog=lecidbproject");
+            return new SqlConnection("data source= localhost;integrated security=true;initial catalog=Northwind");
         }
         
 		public Recipie? getRecipie(string name)
