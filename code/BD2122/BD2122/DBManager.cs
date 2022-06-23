@@ -21,7 +21,7 @@ namespace BD2122
 		public Recipie? getRecipie(string name)
         {
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "select * from recipie where recipieName = @name";
+            cmd.CommandText = "select * from project.recipie where recipieName = @name";
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@name", name);
             cmd.Connection = con;
@@ -183,7 +183,7 @@ namespace BD2122
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText =
                 @"  select step.description
-                    from has join step
+                    from project.has join project.step
                         on has.stepID = step.stepID
                     where has.recipieName = @recipie
                     order by has.stepNum;";
