@@ -35,3 +35,4 @@ C:\Users\jmuac\source\repos\leci-db-project\code\BD2122\BD2122\obj\Debug\net6.0-
 C:\Users\jmuac\source\repos\leci-db-project\code\BD2122\BD2122\obj\Debug\net6.0-windows\refint\BD2122.dll
 C:\Users\jmuac\source\repos\leci-db-project\code\BD2122\BD2122\obj\Debug\net6.0-windows\BD2122.pdb
 Z:\BD\projeto\code\BD2122\BD2122\obj\Debug\net6.0-windows\BD2122.Properties.Resources.resources
+C:\Users\jmuac\source\repos\leci-db-project\code\BD2122\BD2122\obj\Debug\net6.0-windows\BD2122.Properties.Resources.resources

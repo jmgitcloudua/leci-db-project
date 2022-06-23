@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "Z:\\BD\\projeto\\code\\BD2122\\BD2122\\BD2122.csproj": {}
+    "C:\\Users\\jmuac\\source\\repos\\leci-db-project\\code\\BD2122\\BD2122\\BD2122.csproj": {}
   },
   "projects": {
-    "Z:\\BD\\projeto\\code\\BD2122\\BD2122\\BD2122.csproj": {
+    "C:\\Users\\jmuac\\source\\repos\\leci-db-project\\code\\BD2122\\BD2122\\BD2122.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\BD\\projeto\\code\\BD2122\\BD2122\\BD2122.csproj",
+        "projectUniqueName": "C:\\Users\\jmuac\\source\\repos\\leci-db-project\\code\\BD2122\\BD2122\\BD2122.csproj",
         "projectName": "BD2122",
-        "projectPath": "Z:\\BD\\projeto\\code\\BD2122\\BD2122\\BD2122.csproj",
-        "packagesPath": "C:\\Users\\me\\.nuget\\packages\\",
-        "outputPath": "Z:\\BD\\projeto\\code\\BD2122\\BD2122\\obj\\",
+        "projectPath": "C:\\Users\\jmuac\\source\\repos\\leci-db-project\\code\\BD2122\\BD2122\\BD2122.csproj",
+        "packagesPath": "C:\\Users\\jmuac\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jmuac\\source\\repos\\leci-db-project\\code\\BD2122\\BD2122\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\me\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jmuac\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -63,7 +67,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

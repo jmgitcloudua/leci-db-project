@@ -56,7 +56,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtBoxStepNumber = new System.Windows.Forms.TextBox();
             this.txtBoxStepDescriptio = new System.Windows.Forms.TextBox();
+<<<<<<< HEAD
             this.button1 = new System.Windows.Forms.Button();
+=======
+            this.label6 = new System.Windows.Forms.Label();
+>>>>>>> parent of 5285d39 (UI for insert data is working)
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -97,8 +101,12 @@
             this.groupBox1.Location = new System.Drawing.Point(27, 80);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
+<<<<<<< HEAD
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Size = new System.Drawing.Size(276, 337);
+=======
+            this.groupBox1.Size = new System.Drawing.Size(315, 449);
+>>>>>>> parent of 5285d39 (UI for insert data is working)
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "RECEITA";
@@ -107,8 +115,12 @@
             // 
             this.bntRecipeInsert.BackColor = System.Drawing.Color.RoyalBlue;
             this.bntRecipeInsert.ForeColor = System.Drawing.Color.Black;
+<<<<<<< HEAD
             this.bntRecipeInsert.Location = new System.Drawing.Point(76, 279);
             this.bntRecipeInsert.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+=======
+            this.bntRecipeInsert.Location = new System.Drawing.Point(87, 372);
+>>>>>>> parent of 5285d39 (UI for insert data is working)
             this.bntRecipeInsert.Name = "bntRecipeInsert";
             this.bntRecipeInsert.Size = new System.Drawing.Size(99, 29);
             this.bntRecipeInsert.TabIndex = 4;
@@ -118,8 +130,12 @@
             // 
             // txtBoxRecipePreparingTime
             // 
+<<<<<<< HEAD
             this.txtBoxRecipePreparingTime.Location = new System.Drawing.Point(14, 218);
             this.txtBoxRecipePreparingTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+=======
+            this.txtBoxRecipePreparingTime.Location = new System.Drawing.Point(16, 291);
+>>>>>>> parent of 5285d39 (UI for insert data is working)
             this.txtBoxRecipePreparingTime.Name = "txtBoxRecipePreparingTime";
             this.txtBoxRecipePreparingTime.PlaceholderText = "Insira o tempo de preparação";
             this.txtBoxRecipePreparingTime.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -139,8 +155,12 @@
             // 
             // txtBoxRecipeCalories
             // 
+<<<<<<< HEAD
             this.txtBoxRecipeCalories.Location = new System.Drawing.Point(14, 174);
             this.txtBoxRecipeCalories.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+=======
+            this.txtBoxRecipeCalories.Location = new System.Drawing.Point(16, 232);
+>>>>>>> parent of 5285d39 (UI for insert data is working)
             this.txtBoxRecipeCalories.Name = "txtBoxRecipeCalories";
             this.txtBoxRecipeCalories.PlaceholderText = "Insira a caloria";
             this.txtBoxRecipeCalories.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -159,12 +179,20 @@
             // 
             // txtBoxRecipeDuration
             // 
+<<<<<<< HEAD
             this.txtBoxRecipeDuration.Location = new System.Drawing.Point(14, 134);
             this.txtBoxRecipeDuration.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxRecipeDuration.Name = "txtBoxRecipeDuration";
             this.txtBoxRecipeDuration.PlaceholderText = "Insira a duração";
             this.txtBoxRecipeDuration.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtBoxRecipeDuration.Size = new System.Drawing.Size(242, 23);
+=======
+            this.txtBoxRecipeDuration.Location = new System.Drawing.Point(16, 179);
+            this.txtBoxRecipeDuration.Name = "txtBoxRecipeDuration";
+            this.txtBoxRecipeDuration.PlaceholderText = "Insira a duração";
+            this.txtBoxRecipeDuration.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtBoxRecipeDuration.Size = new System.Drawing.Size(276, 27);
+>>>>>>> parent of 5285d39 (UI for insert data is working)
             this.txtBoxRecipeDuration.TabIndex = 6;
             // 
             // txtBoxRecipeAuthorName
@@ -185,11 +213,17 @@
             this.groupBox2.Controls.Add(this.txtBoxIngredientName);
             this.groupBox2.Controls.Add(this.txtBoxIngredientQuanity);
             this.groupBox2.Controls.Add(this.textBoxIngredientDescription);
+<<<<<<< HEAD
             this.groupBox2.Location = new System.Drawing.Point(369, 80);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Size = new System.Drawing.Size(276, 337);
+=======
+            this.groupBox2.Location = new System.Drawing.Point(422, 107);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(315, 449);
+>>>>>>> parent of 5285d39 (UI for insert data is working)
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "INGREDIENTES";
@@ -198,8 +232,12 @@
             // 
             this.btnIngredientInsert.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnIngredientInsert.ForeColor = System.Drawing.Color.Black;
+<<<<<<< HEAD
             this.btnIngredientInsert.Location = new System.Drawing.Point(91, 279);
             this.btnIngredientInsert.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+=======
+            this.btnIngredientInsert.Location = new System.Drawing.Point(104, 372);
+>>>>>>> parent of 5285d39 (UI for insert data is working)
             this.btnIngredientInsert.Name = "btnIngredientInsert";
             this.btnIngredientInsert.Size = new System.Drawing.Size(99, 29);
             this.btnIngredientInsert.TabIndex = 4;
@@ -219,12 +257,20 @@
             // 
             // txtBoxIngreRecipeName
             // 
+<<<<<<< HEAD
             this.txtBoxIngreRecipeName.Location = new System.Drawing.Point(14, 174);
             this.txtBoxIngreRecipeName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxIngreRecipeName.Name = "txtBoxIngreRecipeName";
             this.txtBoxIngreRecipeName.PlaceholderText = "Insira o nome da receita";
             this.txtBoxIngreRecipeName.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtBoxIngreRecipeName.Size = new System.Drawing.Size(242, 23);
+=======
+            this.txtBoxIngreRecipeName.Location = new System.Drawing.Point(16, 232);
+            this.txtBoxIngreRecipeName.Name = "txtBoxIngreRecipeName";
+            this.txtBoxIngreRecipeName.PlaceholderText = "Insira o nome da receita";
+            this.txtBoxIngreRecipeName.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtBoxIngreRecipeName.Size = new System.Drawing.Size(276, 27);
+>>>>>>> parent of 5285d39 (UI for insert data is working)
             this.txtBoxIngreRecipeName.TabIndex = 7;
             // 
             // txtBoxIngredientName
@@ -239,23 +285,39 @@
             // 
             // txtBoxIngredientQuanity
             // 
+<<<<<<< HEAD
             this.txtBoxIngredientQuanity.Location = new System.Drawing.Point(14, 134);
             this.txtBoxIngredientQuanity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxIngredientQuanity.Name = "txtBoxIngredientQuanity";
             this.txtBoxIngredientQuanity.PlaceholderText = "Insira a quantidade";
             this.txtBoxIngredientQuanity.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtBoxIngredientQuanity.Size = new System.Drawing.Size(242, 23);
+=======
+            this.txtBoxIngredientQuanity.Location = new System.Drawing.Point(16, 179);
+            this.txtBoxIngredientQuanity.Name = "txtBoxIngredientQuanity";
+            this.txtBoxIngredientQuanity.PlaceholderText = "Insira a quantidade";
+            this.txtBoxIngredientQuanity.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtBoxIngredientQuanity.Size = new System.Drawing.Size(276, 27);
+>>>>>>> parent of 5285d39 (UI for insert data is working)
             this.txtBoxIngredientQuanity.TabIndex = 6;
             // 
             // textBoxIngredientDescription
             // 
+<<<<<<< HEAD
             this.textBoxIngredientDescription.Location = new System.Drawing.Point(14, 94);
             this.textBoxIngredientDescription.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+=======
+            this.textBoxIngredientDescription.Location = new System.Drawing.Point(16, 125);
+>>>>>>> parent of 5285d39 (UI for insert data is working)
             this.textBoxIngredientDescription.Multiline = true;
             this.textBoxIngredientDescription.Name = "textBoxIngredientDescription";
             this.textBoxIngredientDescription.PlaceholderText = "Insira a descrição";
             this.textBoxIngredientDescription.RightToLeft = System.Windows.Forms.RightToLeft.No;
+<<<<<<< HEAD
             this.textBoxIngredientDescription.Size = new System.Drawing.Size(242, 21);
+=======
+            this.textBoxIngredientDescription.Size = new System.Drawing.Size(276, 27);
+>>>>>>> parent of 5285d39 (UI for insert data is working)
             this.textBoxIngredientDescription.TabIndex = 5;
             // 
             // contextMenuStrip1
@@ -272,11 +334,17 @@
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.txtBoxStepNumber);
             this.groupBox3.Controls.Add(this.txtBoxStepDescriptio);
+<<<<<<< HEAD
             this.groupBox3.Location = new System.Drawing.Point(708, 80);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Size = new System.Drawing.Size(276, 337);
+=======
+            this.groupBox3.Location = new System.Drawing.Point(809, 107);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(315, 449);
+>>>>>>> parent of 5285d39 (UI for insert data is working)
             this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "STEP";
@@ -284,22 +352,36 @@
             // btnUploadImage
             // 
             this.btnUploadImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUploadImage.BackgroundImage")));
+<<<<<<< HEAD
             this.btnUploadImage.Location = new System.Drawing.Point(22, 174);
             this.btnUploadImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUploadImage.Name = "btnUploadImage";
             this.btnUploadImage.Size = new System.Drawing.Size(234, 95);
+=======
+            this.btnUploadImage.Location = new System.Drawing.Point(25, 232);
+            this.btnUploadImage.Name = "btnUploadImage";
+            this.btnUploadImage.Size = new System.Drawing.Size(267, 127);
+>>>>>>> parent of 5285d39 (UI for insert data is working)
             this.btnUploadImage.TabIndex = 9;
             this.btnUploadImage.Text = "Upload image";
             this.btnUploadImage.UseVisualStyleBackColor = true;
             // 
             // txtBoxStepRecipeName
             // 
+<<<<<<< HEAD
             this.txtBoxStepRecipeName.Location = new System.Drawing.Point(14, 134);
             this.txtBoxStepRecipeName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxStepRecipeName.Name = "txtBoxStepRecipeName";
             this.txtBoxStepRecipeName.PlaceholderText = "Insira o nome da receita";
             this.txtBoxStepRecipeName.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtBoxStepRecipeName.Size = new System.Drawing.Size(242, 23);
+=======
+            this.txtBoxStepRecipeName.Location = new System.Drawing.Point(16, 179);
+            this.txtBoxStepRecipeName.Name = "txtBoxStepRecipeName";
+            this.txtBoxStepRecipeName.PlaceholderText = "Insira o nome da receita";
+            this.txtBoxStepRecipeName.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtBoxStepRecipeName.Size = new System.Drawing.Size(276, 27);
+>>>>>>> parent of 5285d39 (UI for insert data is working)
             this.txtBoxStepRecipeName.TabIndex = 8;
             // 
             // btnStepInsert
@@ -327,8 +409,12 @@
             // 
             // txtBoxStepNumber
             // 
+<<<<<<< HEAD
             this.txtBoxStepNumber.Location = new System.Drawing.Point(14, 51);
             this.txtBoxStepNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+=======
+            this.txtBoxStepNumber.Location = new System.Drawing.Point(16, 68);
+>>>>>>> parent of 5285d39 (UI for insert data is working)
             this.txtBoxStepNumber.Name = "txtBoxStepNumber";
             this.txtBoxStepNumber.PlaceholderText = "Insira o número";
             this.txtBoxStepNumber.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -338,6 +424,7 @@
             // 
             // txtBoxStepDescriptio
             // 
+<<<<<<< HEAD
             this.txtBoxStepDescriptio.Location = new System.Drawing.Point(14, 94);
             this.txtBoxStepDescriptio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxStepDescriptio.Name = "txtBoxStepDescriptio";
@@ -358,13 +445,35 @@
             this.button1.Text = "PESQUISAR RECEITA";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
+=======
+            this.txtBoxStepDescriptio.Location = new System.Drawing.Point(16, 125);
+            this.txtBoxStepDescriptio.Name = "txtBoxStepDescriptio";
+            this.txtBoxStepDescriptio.PlaceholderText = "Insira a descrição";
+            this.txtBoxStepDescriptio.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtBoxStepDescriptio.Size = new System.Drawing.Size(276, 27);
+            this.txtBoxStepDescriptio.TabIndex = 6;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label6.Location = new System.Drawing.Point(298, 13);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(17, 20);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "1";
+>>>>>>> parent of 5285d39 (UI for insert data is working)
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(1028, 450);
             this.Controls.Add(this.button1);
+=======
+            this.ClientSize = new System.Drawing.Size(1175, 600);
+>>>>>>> parent of 5285d39 (UI for insert data is working)
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -411,6 +520,12 @@
         private TextBox txtBoxStepDescriptio;
         private Button btnUploadImage;
         private TextBox txtBoxStepRecipeName;
+
         private Button button1;
+
+        private Label label6;
+
+        public EventHandler btnStepInsert_click { get; private set; }
+            parent of 5285d39 (UI for insert data is working);
     }
 }
