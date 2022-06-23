@@ -14,7 +14,7 @@ namespace BD2122
 
         private SqlConnection getSGBDConnection()
         {
-            return new SqlConnection("data source= tcp:mednat.ieeta.pt\\SQLSERVER,8101;integrated security=false;initial catalog=; password=; uid=");
+            return new SqlConnection("data source= tcp:mednat.ieeta.pt\\SQLSERVER,8101;integrated security=false;initial catalog=p7g1; password=20222329@BD; uid=p7g1");
             
         }
         

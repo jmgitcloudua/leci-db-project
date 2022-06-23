@@ -5,6 +5,7 @@ namespace BD2122
     public partial class Form1 : Form
     {
         private DBManager dbManager;
+        private int stepID = -1;
         
 		public Form1()
         {
@@ -65,8 +66,8 @@ namespace BD2122
 
         private void btnIngredientInsert_Click(object sender, EventArgs e)
         {
-
-            dbManager.insertIngredient(txtBoxIngredientName.Text, txtBoxStepDescription.Text);
+            dbManager.addIngredientTran(txtBoxIngredientName.Text, txtBoxIngredientDescription.Text, stepID, 0, "g");
+            //dbManager.addIngredientTran(txtBoxIngredientName.Text, txtBoxStepDescription.Text);
             MessageBox.Show("Ingrediente Salvo com sucesso", "Inserir Ingrediente", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         private void btnUtensilInsert_Click(object sender, EventArgs e)
@@ -88,7 +89,9 @@ namespace BD2122
             Int32 stepNum = Int32.Parse(txtBoxStepNumber.Text);
             string stepDescription = txtBoxStepDescription.Text;
             string stepImg = btnUploadImage.Text;
-            dbManager.insertStep(stepNum, stepDescription, stepImg);
+            string recipie = txtBoxRecipeName.Text;
+            //dbManager.insertStep(stepNum, stepDescription, stepImg);
+            dbManager.addStepTran(recipie, stepNum, stepDescription, stepImg);                                // ------------------------------------     
             MessageBox.Show("Step Salvo com sucesso", "Inserir Step", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         private void btnUploadImg_Click(object sender, EventArgs e)
