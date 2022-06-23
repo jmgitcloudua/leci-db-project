@@ -1,3 +1,7 @@
+select * from project.step;
+select * from project.has;
+select * from project.usesIngredient;
+
 CREATE DATABASE dbname;
 USE dbname;
 
@@ -190,7 +194,7 @@ go
 
 drop proc AddStep;
 go
-CREATE PROC AddStep (@recipieName name, @stepNum int, @description text, @image varchar(20))
+CREATE PROC project.AddStep (@recipieName name, @stepNum int, @description text, @image varchar(20))
 AS BEGIN
 BEGIN TRAN
 	declare @lenStep int;
@@ -218,12 +222,16 @@ select * from has;
 declare @res as int
 exec @res=dbo.AddStep 'alksjdf', 0, 'Something else', 'img.png'
 
+drop proc project.AddIngredient;
 go
-CREATE PROC AddIngredient (@ingredientName varchar(20), @description text, @stepID int, @quantity float, @unit varchar(5))
+CREATE PROC project.AddIngredient (@ingredientName varchar(20), @description text, @quantity float, @unit varchar(5))
 AS BEGIN
 BEGIN TRAN
 	declare @lenUse int;
 	select @lenUse = count(*) from usesIngredient;
+
+	declare @lenStep int;
+	select @lenStep = count(*) from step;
 
 	insert into ingredient
 	(ingredientName, description)
@@ -233,7 +241,7 @@ BEGIN TRAN
 	insert into usesIngredient
 	(id, stepID, ingredientName, quantity, unit)
 	values
-	(@lenUse, @stepID, @ingredientName, @quantity, @unit);
+	(@lenUse, @lenStep, @ingredientName, @quantity, @unit);
 
 	if @@ERROR <> 0
 		ROLLBACK TRAN

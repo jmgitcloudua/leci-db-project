@@ -66,7 +66,7 @@ namespace BD2122
 
         private void btnIngredientInsert_Click(object sender, EventArgs e)
         {
-            dbManager.addIngredientTran(txtBoxIngredientName.Text, txtBoxIngredientDescription.Text, stepID, 0, "g");
+            dbManager.addIngredientTran(txtBoxIngredientName.Text, txtBoxIngredientDescription.Text, 0, "g");
             //dbManager.addIngredientTran(txtBoxIngredientName.Text, txtBoxStepDescription.Text);
             MessageBox.Show("Ingrediente Salvo com sucesso", "Inserir Ingrediente", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -91,7 +91,7 @@ namespace BD2122
             string stepImg = btnUploadImage.Text;
             string recipie = txtBoxRecipeName.Text;
             //dbManager.insertStep(stepNum, stepDescription, stepImg);
-            dbManager.addStepTran(recipie, stepNum, stepDescription, stepImg);                                // ------------------------------------     
+            stepID = dbManager.addStepTran(recipie, stepNum, stepDescription, stepImg);                                // ------------------------------------     
             MessageBox.Show("Step Salvo com sucesso", "Inserir Step", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         private void btnUploadImg_Click(object sender, EventArgs e)

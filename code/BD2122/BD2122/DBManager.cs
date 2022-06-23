@@ -362,11 +362,11 @@ namespace BD2122
             cmd.ExecuteNonQuery();
         }
 
-        public void addStepTran(string recipieName, int stepNum, string description, string image)
+        public int addStepTran(string recipieName, int stepNum, string description, string image)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText =
-                "exec AddStep @recipieName, @stepNum, @description, @image";
+                "exec project.AddStep @recipieName, @stepNum, @description, @image";
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@recipieName", recipieName);
             cmd.Parameters.AddWithValue("@stepNum", stepNum);
@@ -374,18 +374,21 @@ namespace BD2122
             cmd.Parameters.AddWithValue("@image", image);
             cmd.Connection = con;
 
+            cmd.Parameters.Add(new SqlParameter("@RETURN_VALUE", System.Data.SqlDbType.Int));
+            cmd.Parameters["@RETURN_VALUE"].Direction = System.Data.ParameterDirection.ReturnValue;
             cmd.ExecuteNonQuery();
+            
+            return (int) cmd.Parameters["@RETURN_VALUE"].Value;
         }
 
-        public void addIngredientTran(string ingredientName, string description, int stepID, int quantity, string unit)
+        public void addIngredientTran(string ingredientName, string description, int quantity, string unit)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText =
-                "exec AddStep @ingredientName, @description, @stepID, @quantity, @unit";
+                "exec project.AddIngredient @ingredientName, @description, @quantity, @unit";
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@ingredientName", ingredientName);
             cmd.Parameters.AddWithValue("@description", description);
-            cmd.Parameters.AddWithValue("@stepID", stepID);
             cmd.Parameters.AddWithValue("@quantity", quantity);
             cmd.Parameters.AddWithValue("@unit", unit);
             cmd.Connection = con;
