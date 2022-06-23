@@ -14,7 +14,8 @@ namespace BD2122
 
         private SqlConnection getSGBDConnection()
         {
-            return new SqlConnection("data source= localhost;integrated security=true;initial catalog=dbname");
+            return new SqlConnection("data source= tcp:mednat.ieeta.pt\\SQLSERVER,8101;integrated security=false;initial catalog=p7g1; password=20222329@BD; uid=p7g1");
+            
         }
         
 		public Recipie? getRecipie(string name)
@@ -246,7 +247,7 @@ namespace BD2122
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText =
-                @"  insert into recipie
+                @"  insert into project.recipie
                     (recipieName, author, calories, preparingTime)
                     values
                     (@recipieName, @author, @calories, @preparingTime);";
@@ -260,11 +261,11 @@ namespace BD2122
             cmd.ExecuteNonQuery();
         }
 
-        public void insertUtensil(string utensilName, string dimention, int unit)
+        public void insertUtensil(string utensilName, int dimention, string unit)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText =
-                @"  insert into utensil
+                @"  insert into project.utensil
                     (utensilName, dimention, unit)
                     values
                     (@utensilName, @dimention, @unit);";
@@ -281,7 +282,7 @@ namespace BD2122
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText =
-                @"  insert into ingredient
+                @"  insert into project.ingredient
                     (ingredientName, description)
                     values
                     (@ingredientName, @description);";
@@ -297,7 +298,7 @@ namespace BD2122
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText =
-                @"  insert into category
+                @"  insert into project.category
                     (categoryName, description)
                     values
                     (@categoryName, @description);";
@@ -313,7 +314,7 @@ namespace BD2122
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText =
-                @"  insert into step
+                @"  insert into project.step
                     (stepID, description, image)
                     values
                     (@stepID, @description, @image);";
@@ -330,7 +331,7 @@ namespace BD2122
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText =
-                @"  insert into has
+                @"  insert into project.has
                     (recipieName, stepID, id, stepNum)
                     values
                     (@recipieName, @stepID, @id, @stepNum);";
@@ -348,7 +349,7 @@ namespace BD2122
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText =
-                @"  insert into usesUtensil
+                @"  insert into project.usesUtensil
                     (utensilName, stepID, id)
                     values
                     (@utensilName, @stepID, @id);";
@@ -396,7 +397,7 @@ namespace BD2122
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText =
-                @"  insert into usesIngredient
+                @"  insert into project.usesIngredient
                     (ingredientName, stepID, id, quantity, unit)
                     values
                     (@ingredientName, @stepID, @id, @quantity, @unit);";
@@ -415,7 +416,7 @@ namespace BD2122
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText =
-                @"  insert into belongs
+                @"  insert into project.belongs
                     (recipieName, categoryName)
                     values
                     (@recipieName, categoryName);";
