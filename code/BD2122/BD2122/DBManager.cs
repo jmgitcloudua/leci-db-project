@@ -94,7 +94,7 @@ namespace BD2122
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText =
-                "select * from dbo.GetIngredientAmounts(@Recipie, @Mass, @Capacity, @Temperature);";
+                "select * from project.GetIngredientAmounts(@Recipie, @Mass, @Capacity, @Temperature);";
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@Recipie", recipie);
             cmd.Parameters.AddWithValue("@Mass", mass);
